@@ -1,0 +1,21 @@
+#让输出带颜色
+function echo_with_color() {
+    #$1 is color
+    #$2 is message
+    before_prefix="\033[36m "
+    case $1 in
+    'b')
+        before_prefix="\033[34m "
+        ;;
+    'g')
+        before_prefix="\033[32m "
+        ;;
+    'r')
+        before_prefix="\033[31m "
+        ;;
+    'y')
+        before_prefix="\033[33m "
+        ;;
+    esac
+    echo -e "$before_prefix $2 \033[0m"
+}
